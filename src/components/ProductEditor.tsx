@@ -15,16 +15,23 @@ function ProductEditor() {
   }
 
   useEffect(() => {
-    fetch('/products.json')
+    fetchProducts();
+  }, []);
+
+  const fetchProducts = () => {
+    const cacheBuster = new Date().getTime(); // Cache-busting parameter
+    fetch(`/products.json?cb=${cacheBuster}`)
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
         return response.json();
       })
-      .then(data => setProducts(data))
+      .then(data => {
+        setProducts(data);
+      })
       .catch(error => console.error('There was a problem with the fetch operation:', error));
-  }, []);
+  };
 
   const handleEdit = (product: Product) => {
     setEditedProduct(product);
@@ -36,14 +43,25 @@ function ProductEditor() {
     );
     setProducts(updatedProducts);
     setEditedProduct(null);
-    // Save updatedProducts to products.json
-    fetch('/products.json', {
+
+    // Save updatedProducts to backend API
+    fetch('/api/save-products', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(updatedProducts),
-    });
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(() => {
+      fetchProducts(); // Refetch products after saving
+    })
+    .catch(error => console.error('There was a problem with the save operation:', error));
   };
 
   return (

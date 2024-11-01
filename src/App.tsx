@@ -20,7 +20,12 @@ function App() {
   const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
-    fetch('/products.json')
+    fetchProducts();
+  }, []);
+
+  const fetchProducts = () => {
+    const cacheBuster = new Date().getTime(); // Cache-busting parameter
+    fetch(`/products.json?cb=${cacheBuster}`)
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
@@ -29,7 +34,7 @@ function App() {
       })
       .then(data => setProducts(data))
       .catch(error => console.error('There was a problem with the fetch operation:', error));
-  }, []);
+  };
 
   return (
     <Router>
