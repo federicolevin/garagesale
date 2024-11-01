@@ -13,7 +13,7 @@ export function ProductCard({ product, phoneNumber }: ProductCardProps) {
 
   const handleWhatsAppClick = () => {
     const message = encodeURIComponent(
-      `Hi! I'm interested in your ${product.name} listed for $${product.price}`
+      `Hola! Estoy interesado en ${product.name} publicado a $${product.price}`
     );
     window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
   };
@@ -42,7 +42,7 @@ export function ProductCard({ product, phoneNumber }: ProductCardProps) {
               className="flex items-center gap-2 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors"
             >
               <MessageCircle size={18} />
-              Contact
+              Me interesa!
             </button>
           </div>
         </div>
