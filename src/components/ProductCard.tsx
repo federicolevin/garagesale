@@ -1,11 +1,20 @@
 import React, { useState } from 'react';
-import { Product } from '../types';
 import { MessageCircle } from 'lucide-react';
 import { ImageGalleryModal } from './ImageGalleryModal';
 
 interface ProductCardProps {
   product: Product;
   phoneNumber: string;
+}
+
+interface Product {
+  id: string;
+  name: string;
+  price: number;
+  description: string;
+  condition: string;
+  category: string;
+  images: string[];
 }
 
 export function ProductCard({ product, phoneNumber }: ProductCardProps) {
