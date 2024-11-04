@@ -1,71 +1,50 @@
-import React, { useState } from 'react';
-import { X, ChevronLeft, ChevronRight } from 'lucide-react';
+import React, { useEffect } from 'react';
+import { X } from 'lucide-react';
 
 interface ImageGalleryModalProps {
   images: string[];
+  currentIndex: number;
   onClose: () => void;
 }
 
-export function ImageGalleryModal({ images, onClose }: ImageGalleryModalProps) {
-  const [currentIndex, setCurrentIndex] = useState(0);
+export const ImageGalleryModal: React.FC<ImageGalleryModalProps> = ({ images, currentIndex, onClose }) => {
+  const [currentImageIndex, setCurrentImageIndex] = React.useState(currentIndex);
 
-  const goToNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % images.length);
+  const handleNext = () => {
+    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
   };
 
-  const goToPrevious = () => {
-    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+  const handlePrev = () => {
+    setCurrentImageIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
   };
+
+  const handleKeyDown = (event: KeyboardEvent) => {
+    if (event.key === 'Escape') {
+      onClose();
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-75 z-50 flex items-center justify-center">
-      <div className="relative w-full max-w-4xl mx-4">
-        <button
-          onClick={onClose}
-          className="absolute right-4 top-4 text-white hover:text-gray-300 z-10"
-        >
-          <X size={24} />
+    <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-[1000]" onClick={onClose}>
+      <button onClick={onClose} className="absolute top-4 right-4 text-white">
+        <X size={48} /> {/* Larger X button */}
+      </button>
+      <div className="relative" onClick={(e) => e.stopPropagation()}>
+        <button onClick={handlePrev} className="absolute left-0 top-1/2 transform -translate-y-1/2 text-white text-4xl">
+          &lt;
         </button>
-        
-        <div className="relative aspect-video bg-black rounded-lg overflow-hidden">
-          <img
-            src={images[currentIndex]}
-            alt={`Image ${currentIndex + 1}`}
-            className="w-full h-full object-contain"
-          />
-          
-          {images.length > 1 && (
-            <>
-              <button
-                onClick={goToPrevious}
-                className="absolute left-4 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 hover:bg-opacity-75 text-white p-2 rounded-full"
-              >
-                <ChevronLeft size={24} />
-              </button>
-              <button
-                onClick={goToNext}
-                className="absolute right-4 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 hover:bg-opacity-75 text-white p-2 rounded-full"
-              >
-                <ChevronRight size={24} />
-              </button>
-            </>
-          )}
-        </div>
-        
-        {images.length > 1 && (
-          <div className="flex justify-center mt-4 gap-2">
-            {images.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentIndex(index)}
-                className={`w-2 h-2 rounded-full transition-colors ${
-                  index === currentIndex ? 'bg-white' : 'bg-gray-500'
-                }`}
-              />
-            ))}
-          </div>
-        )}
+        <img src={images[currentImageIndex]} alt={`Image ${currentImageIndex + 1}`} className="max-h-screen" />
+        <button onClick={handleNext} className="absolute right-0 top-1/2 transform -translate-y-1/2 text-white text-4xl">
+          &gt;
+        </button>
       </div>
     </div>
   );
-}
+};
