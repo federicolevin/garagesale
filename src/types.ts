@@ -7,3 +7,5 @@ export interface Product {
   status: 'available' | 'reserved' | 'sold';
   images: string[];
 }
+
+export type ProductStatus = 'available' | 'reserved' | 'sold';

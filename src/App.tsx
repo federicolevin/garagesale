@@ -6,11 +6,13 @@ import { ProductDetail } from './components/ProductDetail';
 import { products } from './data/products';
 import { Login } from './components/Login';
 import { Backoffice } from './components/Backoffice';
+import { ProductStatus } from './types';
 
 const WHATSAPP_NUMBER = '+5491162943172';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [statusFilter, setStatusFilter] = useState<ProductStatus[]>(['available', 'reserved']);
 
   useEffect(() => {
     const authData = localStorage.getItem('authData');
@@ -34,6 +36,22 @@ function App() {
     }
   };
 
+  const handleStatusFilterChange = (status: ProductStatus) => {
+    setStatusFilter((prevFilter) =>
+      prevFilter.includes(status)
+        ? prevFilter.filter((s) => s !== status)
+        : [...prevFilter, status]
+    );
+  };
+
+  const filteredProducts = statusFilter.length === 0 ? products : products.filter(product => statusFilter.includes(product.status));
+
+  const statusLabels: { [key in ProductStatus]: string } = {
+    available: 'Disponible',
+    reserved: 'Reservado',
+    sold: 'Vendido'
+  };
+
   return (
     <Router>
       <div className="min-h-screen bg-gray-50">
@@ -47,12 +65,25 @@ function App() {
         </header>
 
         <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="my-4 flex gap-2">
+            {(['available', 'reserved', 'sold'] as ProductStatus[]).map((status) => (
+              <button
+                key={status}
+                onClick={() => handleStatusFilterChange(status)}
+                className={`px-4 py-2 rounded-full transition-colors ${
+                  statusFilter.includes(status) ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-700'
+                }`}
+              >
+                {statusLabels[status]}
+              </button>
+            ))}
+          </div>
           <Routes>
             <Route
               path="/"
               element={
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {products.map((product) => (
+                  {filteredProducts.map((product) => (
                     <ProductCard
                       key={product.id}
                       product={product}
