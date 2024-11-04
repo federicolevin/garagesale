@@ -65,7 +65,7 @@ function App() {
         </header>
 
         <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="my-4 flex gap-2">
+          <div className="mb-4 flex gap-2">
             {(['available', 'reserved', 'sold'] as ProductStatus[]).map((status) => (
               <button
                 key={status}
