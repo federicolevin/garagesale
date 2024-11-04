@@ -46,7 +46,7 @@ export const ProductDetail: React.FC = () => {
             </div>
           ))}
         </Carousel>
-        <p className="mt-4 text-xl text-gray-700">${product.price}</p>
+        <p className="mt-4 text-xl font-bold text-gray-700">${product.price}</p>
         <p className="mt-2 text-gray-600">{product.description}</p>
         <p className="mt-2 text-gray-600">Condición: {product.condition}</p>
         <button
