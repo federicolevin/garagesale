@@ -24,7 +24,7 @@ export const ProductDetail: React.FC = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
       <nav className="mb-4">
         <Link to="/" className="text-blue-500 hover:underline">← Back to Products</Link>
       </nav>
