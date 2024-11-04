@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { X } from 'lucide-react';
 
 interface ImageGalleryModalProps {
@@ -8,7 +8,9 @@ interface ImageGalleryModalProps {
 }
 
 export const ImageGalleryModal: React.FC<ImageGalleryModalProps> = ({ images, currentIndex, onClose }) => {
-  const [currentImageIndex, setCurrentImageIndex] = React.useState(currentIndex);
+  const [currentImageIndex, setCurrentImageIndex] = useState(currentIndex);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
 
   const handleNext = () => {
     setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -24,10 +26,37 @@ export const ImageGalleryModal: React.FC<ImageGalleryModalProps> = ({ images, cu
     }
   };
 
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isSwipe = Math.abs(distance) > 50;
+
+    if (isSwipe) {
+      if (distance > 0) {
+        handleNext();
+      } else {
+        handlePrev();
+      }
+    }
+
+    setTouchStart(null);
+    setTouchEnd(null);
+  };
+
   useEffect(() => {
     document.addEventListener('keydown', handleKeyDown);
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
     return () => {
       document.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = 'auto'; // Re-enable background scrolling
     };
   }, []);
 
@@ -36,7 +65,13 @@ export const ImageGalleryModal: React.FC<ImageGalleryModalProps> = ({ images, cu
       <button onClick={onClose} className="absolute top-4 right-4 text-white">
         <X size={48} /> {/* Larger X button */}
       </button>
-      <div className="relative" onClick={(e) => e.stopPropagation()}>
+      <div
+        className="relative"
+        onClick={(e) => e.stopPropagation()}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+      >
         <button onClick={handlePrev} className="absolute left-0 top-1/2 transform -translate-y-1/2 text-white text-4xl">
           &lt;
         </button>
