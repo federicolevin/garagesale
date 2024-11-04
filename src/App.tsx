@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Store } from 'lucide-react';
 import { ProductCard } from './components/ProductCard';
@@ -36,7 +36,14 @@ function App() {
                 </div>
               }
             />
-            <Route path="/:id" element={<ProductDetail />} />
+            <Route
+              path="/:id"
+              element={
+                <Suspense fallback={<div>Loading...</div>}>
+                  <ProductDetail />
+                </Suspense>
+              }
+            />
           </Routes>
         </main>
 
