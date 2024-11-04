@@ -21,17 +21,24 @@ export function ProductCard({ product, phoneNumber }: ProductCardProps) {
 
   return (
     <>
-      <div className="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:scale-[1.02]">
+      <div className={`bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:scale-[1.02] ${product.status === 'sold' ? 'filter grayscale' : ''}`}>
         <div className="relative h-48 overflow-hidden">
           <Link to={`/${product.id}`}>
             <img
               src={product.images[0]}
               alt={product.name}
-              className="w-full h-full object-cover cursor-pointer hover:opacity-90 transition-opacity"
+              className={`w-full h-full object-cover cursor-pointer hover:opacity-90 transition-opacity ${product.status === 'sold' ? 'sold' : ''}`}
             />
           </Link>
           <span className="absolute top-2 right-2 bg-white px-2 py-1 rounded-full text-sm font-medium text-gray-700">
             {product.condition}
+          </span>
+          <span
+            className={`absolute top-2 left-2 px-2 py-1 rounded-full text-sm font-medium ${
+              product.status === 'available' ? 'bg-green-600 text-white' : product.status === 'reserved' ? 'bg-yellow-400 text-black' : 'bg-gray-400 text-black'
+            }`}
+          >
+            {product.status === 'available' ? 'Disponible' : product.status === 'reserved' ? 'Reservado' : 'Vendido'}
           </span>
         </div>
         <div className="p-4">
@@ -43,7 +50,10 @@ export function ProductCard({ product, phoneNumber }: ProductCardProps) {
             <span className="text-xl font-bold text-gray-900">${product.price.toFixed(2)}</span>
             <button
               onClick={handleWhatsAppClick}
-              className="flex items-center gap-2 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors"
+              className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${
+                product.status === 'sold' ? 'bg-gray-400 text-gray-700 cursor-not-allowed' : 'bg-green-600 text-white hover:bg-green-700'
+              }`}
+              disabled={product.status === 'sold'}
             >
               <MessageCircle size={18} />
               Me interesa!

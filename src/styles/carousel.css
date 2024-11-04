@@ -11,3 +11,7 @@
   width: 100%;
   object-fit: cover;
 }
+
+.carousel-image.sold {
+  filter: grayscale(100%);
+}
