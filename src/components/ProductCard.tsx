@@ -19,6 +19,19 @@ export function ProductCard({ product, phoneNumber }: ProductCardProps) {
     window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
   };
 
+  const getConditionText = (condition: string) => {
+    switch (condition) {
+      case 'like new':
+        return 'Como nuevo';
+      case 'good':
+        return 'Buen estado';
+      case 'regular':
+        return 'Aceptable';
+      default:
+        return condition;
+    }
+  };
+
   return (
     <>
       <div className={`bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:scale-[1.02] ${product.status === 'sold' ? 'filter grayscale' : ''}`}>
@@ -31,7 +44,7 @@ export function ProductCard({ product, phoneNumber }: ProductCardProps) {
             />
           </Link>
           <span className="absolute top-2 right-2 bg-white px-2 py-1 rounded-full text-sm font-medium text-gray-700">
-            {product.condition}
+            {getConditionText(product.condition)}
           </span>
           <span
             className={`absolute top-2 left-2 px-2 py-1 rounded-full text-sm font-medium ${
