@@ -1,22 +1,48 @@
-import React, { Suspense } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import React, { Suspense, useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes, Navigate, Link } from 'react-router-dom';
 import { Store } from 'lucide-react';
 import { ProductCard } from './components/ProductCard';
 import { ProductDetail } from './components/ProductDetail';
 import { products } from './data/products';
+import { Login } from './components/Login';
+import { Backoffice } from './components/Backoffice';
 
 const WHATSAPP_NUMBER = '+5491162943172';
 
 function App() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  useEffect(() => {
+    const authData = localStorage.getItem('authData');
+    if (authData) {
+      const { expiry } = JSON.parse(authData);
+      if (new Date().getTime() < expiry) {
+        setIsAuthenticated(true);
+      } else {
+        localStorage.removeItem('authData');
+      }
+    }
+  }, []);
+
+  const handleLogin = (password: string) => {
+    if (password === 'your_password') {
+      const expiry = new Date().getTime() + 60 * 60 * 1000; // 1 hour
+      localStorage.setItem('authData', JSON.stringify({ expiry }));
+      setIsAuthenticated(true);
+    } else {
+      alert('Incorrect password');
+    }
+  };
+
   return (
     <Router>
       <div className="min-h-screen bg-gray-50">
         <header className="bg-white shadow-sm">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-            <div className="flex items-center gap-2">
+            <Link to="/" className="flex items-center gap-2">
               <Store className="text-gray-700" size={28} />
               <h1 className="text-2xl font-bold text-gray-900">Fede's Garage Sale</h1>
-            </div>
+            </Link>
           </div>
         </header>
 
@@ -42,6 +68,16 @@ function App() {
                 <Suspense fallback={<div>Loading...</div>}>
                   <ProductDetail />
                 </Suspense>
+              }
+            />
+            <Route
+              path="/edit"
+              element={
+                isAuthenticated ? (
+                  <Backoffice />
+                ) : (
+                  <Login onLogin={handleLogin} />
+                )
               }
             />
           </Routes>

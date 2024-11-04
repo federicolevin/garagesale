@@ -3,8 +3,7 @@ export interface Product {
   name: string;
   price: number;
   description: string;
-  condition: 'Como nuevo' | 'Buen estado' | 'No tan bien';
-  status: 'available' | 'sold' | 'reserved';
+  condition: 'like new' | 'good' | 'regular';
+  status: 'available' | 'reserved' | 'sold';
   images: string[];
-  category: string;
 }
