@@ -9,9 +9,10 @@ export const products: Product[] = [
     condition: 'like new',
     status: 'available',
     images: [
-      'https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&q=80&w=800&h=600',
-      'https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&q=80&w=800&h=400'
+      'images/1/image1.jpg',
+      'images/1/image2.jpg',
+      'images/1/image3.jpg',
+      'images/1/image4.jpg'
     ]
   },
   {
@@ -20,11 +21,11 @@ export const products: Product[] = [
     price: 45.00,
     description: 'Cherry MX Blue switches, great tactile feedback. Includes original keycaps.',
     condition: 'good',
-    status: 'reserved',
+    status: 'available',
     images: [
-      'https://images.unsplash.com/photo-1601445638532-3c6f6c3aa1d6?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1601445638532-3c6f6c3aa1d6?auto=format&fit=crop&q=80&w=800&h=600',
-      'https://images.unsplash.com/photo-1601445638532-3c6f6c3aa1d6?auto=format&fit=crop&q=80&w=800&h=400'
+      'images/2/image1.jpg',
+      'images/2/image2.jpg',
+      'images/2/image3.jpg'
     ]
   },
   {
@@ -33,11 +34,11 @@ export const products: Product[] = [
     price: 120.00,
     description: 'Classic film camera from the 70s. Fully functional with minor cosmetic wear.',
     condition: 'regular',
-    status: 'sold',
+    status: 'available',
     images: [
-      'https://images.unsplash.com/photo-1452780212940-6f5c0d14d848?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1452780212940-6f5c0d14d848?auto=format&fit=crop&q=80&w=800&h=600',
-      'https://images.unsplash.com/photo-1452780212940-6f5c0d14d848?auto=format&fit=crop&q=80&w=800&h=400'
+      'images/3/image1.jpg',
+      'images/3/image2.jpg',
+      'images/3/image3.jpg'
     ]
   },
   {
@@ -48,9 +49,8 @@ export const products: Product[] = [
     condition: 'like new',
     status: 'available',
     images: [
-      'https://images.unsplash.com/photo-1517430816045-df4b7de1d1c0?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1517430816045-df4b7de1d1c0?auto=format&fit=crop&q=80&w=800&h=600',
-      'https://images.unsplash.com/photo-1517430816045-df4b7de1d1c0?auto=format&fit=crop&q=80&w=800&h=400'
+      'images/4/image1.jpg',
+      'images/4/image2.jpg'
     ]
   },
   {
@@ -61,9 +61,8 @@ export const products: Product[] = [
     condition: 'like new',
     status: 'available',
     images: [
-      'https://images.unsplash.com/photo-1511376777868-611b54f68947?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1511376777868-611b54f68947?auto=format&fit=crop&q=80&w=800&h=600',
-      'https://images.unsplash.com/photo-1511376777868-611b54f68947?auto=format&fit=crop&q=80&w=800&h=400'
+      'images/5/image1.jpg',
+      'images/5/image2.jpg'
     ]
   },
   {
@@ -74,9 +73,9 @@ export const products: Product[] = [
     condition: 'like new',
     status: 'available',
     images: [
-      'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&q=80&w=800&h=600',
-      'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&q=80&w=800&h=400'
+      'images/6/image1.jpg',
+      'images/6/image2.jpg',
+      'images/6/image3.jpg'
     ],
   }
 ]
