@@ -71,17 +71,18 @@ export const ProductDetail: React.FC = () => {
         </span>
         <p className="mt-4 text-xl font-bold text-gray-700">${product.price}</p>
         <p className="mt-2 text-gray-600">{product.description}</p>
-        <button
-          onClick={handleWhatsAppClick}
-          className={`mt-4 flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${
-            product.status === 'sold' ? 'bg-gray-400 text-gray-700 cursor-not-allowed' : 'bg-green-600 text-white hover:bg-green-700'
-          }`}
-          disabled={product.status === 'sold'}
-          style={{ float: 'right' }}
-        >
-          <MessageCircle size={18} />
-          Me interesa!
-        </button>
+        <div className="flex justify-end mt-4 mb-4">
+          <button
+            onClick={handleWhatsAppClick}
+            className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${
+              product.status === 'sold' ? 'bg-gray-400 text-gray-700 cursor-not-allowed' : 'bg-green-600 text-white hover:bg-green-700'
+            }`}
+            disabled={product.status === 'sold'}
+          >
+            <MessageCircle size={18} />
+            Me interesa!
+          </button>
+        </div>
       </div>
       {showGallery && (
         <ImageGalleryModal

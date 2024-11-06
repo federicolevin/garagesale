@@ -5,7 +5,7 @@ export const products: Product[] = [
     id: '1',
     name: 'Rack',
     price: 89.99,
-    description: 'Classic brown leather jacket, barely worn. Perfect condition with authentic patina.',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
     condition: 'like new',
     status: 'available',
     images: [
