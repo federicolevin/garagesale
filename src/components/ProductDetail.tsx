@@ -70,7 +70,7 @@ export const ProductDetail: React.FC = () => {
           {getConditionText(product.condition)}
         </span>
         <p className="mt-4 text-xl font-bold text-gray-700">${product.price}</p>
-        <p className="mt-2 text-gray-600">{product.description}</p>
+        <p className="mt-2 text-gray-600" dangerouslySetInnerHTML={{ __html: product.description }}></p>
         <div className="flex justify-end mt-4 mb-4">
           <button
             onClick={handleWhatsAppClick}
