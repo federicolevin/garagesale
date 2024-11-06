@@ -77,5 +77,16 @@ export const products: Product[] = [
       'images/6/image2.jpg',
       'images/6/image3.jpg'
     ],
+  },
+  {
+    id: '7',
+    name: 'Vodka Absolut Miniatura x 5 Botellitas',
+    price: 150.00,
+    description: '',
+    condition: 'like new',
+    status: 'available',
+    images: [
+      'images/7/image1.jpg'
+    ],
   }
 ]

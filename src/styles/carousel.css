@@ -1,5 +1,6 @@
 .custom-carousel .carousel .slide {
   height: 200px;
+  background: none;
 }
 
 .carousel-image-container {
@@ -14,4 +15,11 @@
 
 .carousel-image.sold {
   filter: grayscale(100%);
+}
+
+/* Increase height for desktop view */
+@media (min-width: 1024px) {
+  .desktop-height .carousel .slide {
+    height: 600px; /* Adjust the height as needed */
+  }
 }

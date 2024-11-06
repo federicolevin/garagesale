@@ -52,7 +52,7 @@ export const ProductDetail: React.FC = () => {
       </nav>
       <h1 className="text-3xl font-bold text-gray-900">{product.name}</h1>
       <div className="mt-4 relative">
-        <Carousel showThumbs={false} infiniteLoop useKeyboardArrows autoPlay className="custom-carousel">
+        <Carousel showThumbs={false} infiniteLoop useKeyboardArrows autoPlay className="custom-carousel desktop-height">
           {product.images.map((image, index) => (
             <div key={index} className="carousel-image-container" onClick={() => handleImageClick(index)}>
               <img src={image} alt={product.name} className={`carousel-image ${product.status === 'sold' ? 'sold' : ''}`} />
