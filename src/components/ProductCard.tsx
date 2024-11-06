@@ -63,7 +63,8 @@ export function ProductCard({ product, phoneNumber }: ProductCardProps) {
           <h3 className="text-lg font-semibold text-gray-800">
             <Link to={`/${product.id}`}>{product.name}</Link>
           </h3>
-          <p className="text-gray-600 text-sm mt-1 line-clamp-2">{product.description}</p>
+          <p className="text-gray-600 text-sm mt-1 line-clamp-2" dangerouslySetInnerHTML={{ __html: product.description }}></p>
+          <Link to={`/${product.id}`} className="text-blue-500 hover:underline text-sm">Ver más</Link>
           <div className="mt-4 flex items-center justify-between">
             <span className="text-xl font-bold text-gray-900">${formattedPrice}</span>
             <button

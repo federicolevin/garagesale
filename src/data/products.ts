@@ -6,7 +6,7 @@ export const products: Product[] = [
     name: 'Rack de TV',
     price: 120000,
     description: 'Medidas: 147 largo x 50 alto x 40 profundidad<br><br>• Material: Melamina<br>• Sin tornillos a la vista<br>• Cajón correderas metálicas<br>• Tiene patines plásticos en la base para evitar el contacto directo con el piso<br>• Las puertas abren y cierran con bisagras metálicas<br>• Comprado en Septiembre 2020',
-    condition: 'like new',
+    condition: 'good',
     status: 'available',
     images: [
       'images/1/image1.jpg',
