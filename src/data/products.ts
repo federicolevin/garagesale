@@ -3,9 +3,9 @@ import { Product } from '../types';
 export const products: Product[] = [
   {
     id: '1',
-    name: 'Rack',
-    price: 89.99,
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    name: 'Rack de TV',
+    price: 120000,
+    description: 'Medidas: 147 largo x 50 alto x 40 profundidad<br><br>• Material: Melamina<br>• Sin tornillos a la vista<br>• Cajón correderas metálicas<br>• Tiene patines plásticos en la base para evitar el contacto directo con el piso<br>• Las puertas abren y cierran con bisagras metálicas<br>• Comprado en Septiembre 2020',
     condition: 'like new',
     status: 'available',
     images: [
