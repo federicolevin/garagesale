@@ -32,6 +32,11 @@ export function ProductCard({ product, phoneNumber }: ProductCardProps) {
     }
   };
 
+  const formattedPrice = new Intl.NumberFormat('de-DE', {
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0,
+  }).format(product.price);
+
   return (
     <>
       <div className={`bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:scale-[1.02] ${product.status === 'sold' ? 'filter grayscale' : ''}`}>
@@ -60,7 +65,7 @@ export function ProductCard({ product, phoneNumber }: ProductCardProps) {
           </h3>
           <p className="text-gray-600 text-sm mt-1 line-clamp-2">{product.description}</p>
           <div className="mt-4 flex items-center justify-between">
-            <span className="text-xl font-bold text-gray-900">${product.price.toFixed(2)}</span>
+            <span className="text-xl font-bold text-gray-900">${formattedPrice}</span>
             <button
               onClick={handleWhatsAppClick}
               className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${

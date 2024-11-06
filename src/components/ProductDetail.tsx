@@ -45,6 +45,11 @@ export const ProductDetail: React.FC = () => {
     }
   };
 
+  const formattedPrice = new Intl.NumberFormat('de-DE', {
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0,
+  }).format(product.price);
+
   return (
     <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
       <nav className="mb-4">
@@ -69,7 +74,7 @@ export const ProductDetail: React.FC = () => {
         <span className="absolute top-2 right-2 bg-white px-2 py-1 rounded-full text-sm font-medium text-gray-700">
           {getConditionText(product.condition)}
         </span>
-        <p className="mt-4 text-xl font-bold text-gray-700">${product.price}</p>
+        <p className="mt-4 text-xl font-bold text-gray-700">${formattedPrice}</p>
         <p className="mt-2 text-gray-600" dangerouslySetInnerHTML={{ __html: product.description }}></p>
         <div className="flex justify-end mt-4 mb-4">
           <button
