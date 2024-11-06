@@ -1,4 +1,4 @@
-import React, { Suspense, useState, useEffect } from 'react';
+import { Suspense, useState, useEffect } from 'react';
 import { BrowserRouter, HashRouter, Route, Routes, Link, useLocation } from 'react-router-dom';
 import { Store } from 'lucide-react';
 import { ProductCard } from './components/ProductCard';
