@@ -3,7 +3,7 @@ import { Product } from '../types';
 export const products: Product[] = [
   {
     id: '1',
-    name: 'Vintage Leather Jacket',
+    name: 'Rack',
     price: 89.99,
     description: 'Classic brown leather jacket, barely worn. Perfect condition with authentic patina.',
     condition: 'like new',
@@ -17,10 +17,10 @@ export const products: Product[] = [
   },
   {
     id: '2',
-    name: 'Mechanical Keyboard',
+    name: 'Mesa + Sillas',
     price: 45.00,
     description: 'Cherry MX Blue switches, great tactile feedback. Includes original keycaps.',
-    condition: 'good',
+    condition: 'like new',
     status: 'available',
     images: [
       'images/2/image1.jpg',
@@ -30,10 +30,10 @@ export const products: Product[] = [
   },
   {
     id: '3',
-    name: 'Vintage Camera',
+    name: 'Mesa ratona',
     price: 120.00,
     description: 'Classic film camera from the 70s. Fully functional with minor cosmetic wear.',
-    condition: 'regular',
+    condition: 'good',
     status: 'available',
     images: [
       'images/3/image1.jpg',
@@ -43,10 +43,10 @@ export const products: Product[] = [
   },
   {
     id: '4',
-    name: 'Mountain Bike',
+    name: 'Alfombra',
     price: 300.00,
     description: '21-speed mountain bike with front suspension. Lightly used, excellent condition.',
-    condition: 'like new',
+    condition: 'regular',
     status: 'available',
     images: [
       'images/4/image1.jpg',
@@ -55,7 +55,7 @@ export const products: Product[] = [
   },
   {
     id: '5',
-    name: 'Electric Guitar',
+    name: 'Recibidor zapatero',
     price: 250.00,
     description: 'Electric guitar with maple neck and rosewood fretboard. Comes with a gig bag.',
     condition: 'like new',
@@ -67,7 +67,7 @@ export const products: Product[] = [
   },
   {
     id: '6',
-    name: 'Smartphone',
+    name: 'Mesa + sillas Acapulco',
     price: 150.00,
     description: 'Latest model smartphone with 128GB storage. Minor scratches on the screen.',
     condition: 'like new',
@@ -87,6 +87,35 @@ export const products: Product[] = [
     status: 'available',
     images: [
       'images/7/image1.jpg'
+    ],
+  },
+  {
+    id: '8',
+    name: 'Samsung Galaxy S22',
+    price: 150.00,
+    description: '',
+    condition: 'like new',
+    status: 'available',
+    images: [
+      'images/8/image1.jpg',
+      'images/8/image2.jpg',
+      'images/8/image3.jpg',
+      'images/8/image4.jpg',
+      'images/8/image5.jpg',
+    ],
+  },
+  {
+    id: '9',
+    name: 'Xiaomi Mi Band 6',
+    price: 150.00,
+    description: '',
+    condition: 'good',
+    status: 'available',
+    images: [
+      'images/9/image1.jpg',
+      'images/9/image2.jpg',
+      'images/9/image3.jpg',
+      'images/9/image4.jpg'
     ],
   }
 ]
