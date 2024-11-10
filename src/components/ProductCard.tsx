@@ -45,7 +45,7 @@ export function ProductCard({ product, phoneNumber }: ProductCardProps) {
         <div className="relative h-48 overflow-hidden">
           <Link to={`/${product.id}`}>
             <img
-              src={product.images[0]}
+              src={`images/${product.id}/${product.images[0]}`}
               alt={product.name}
               className={`w-full h-full object-cover cursor-pointer hover:opacity-90 transition-opacity ${product.status === 'sold' ? 'sold' : ''}`}
             />

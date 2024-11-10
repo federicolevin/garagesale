@@ -62,7 +62,7 @@ export const ProductDetail: React.FC = () => {
         <Carousel showThumbs={false} infiniteLoop useKeyboardArrows autoPlay className="custom-carousel desktop-height">
           {product.images.map((image, index) => (
             <div key={index} className="carousel-image-container" onClick={() => handleImageClick(index)}>
-              <img src={image} alt={product.name} className={`carousel-image ${product.status === 'sold' ? 'sold' : ''}`} />
+              <img src={`images/${product.id}/${image}`} alt={product.name} className={`carousel-image ${product.status === 'sold' ? 'sold' : ''}`} />
             </div>
           ))}
         </Carousel>

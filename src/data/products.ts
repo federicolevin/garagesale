@@ -10,10 +10,10 @@ export const products: Product[] = [
     condition: 'like new',
     status: 'available',
     images: [
-      'images/1/image1.jpg',
-      'images/1/image2.jpg',
-      'images/1/image3.jpg',
-      'images/1/image4.jpg'
+      'image1.jpg',
+      'image2.jpg',
+      'image3.jpg',
+      'image4.jpg'
     ]
   },
   {
@@ -25,8 +25,8 @@ export const products: Product[] = [
     condition: 'like new',
     status: 'available',
     images: [
-      'images/2/image1.jpg',
-      'images/2/image2.jpg'
+      'image1.jpg',
+      'image2.jpg'
     ]
   },
   {
@@ -38,8 +38,8 @@ export const products: Product[] = [
     condition: 'like new',
     status: 'available',
     images: [
-      'images/3/image1.jpg',
-      'images/3/image2.jpg'
+      'image1.jpg',
+      'image2.jpg'
     ]
   },
   {
@@ -51,9 +51,9 @@ export const products: Product[] = [
     condition: 'good',
     status: 'available',
     images: [
-      'images/4/image1.jpg',
-      'images/4/image2.jpg',
-      'images/4/image3.jpg'
+      'image1.jpg',
+      'image2.jpg',
+      'image3.jpg'
     ]
   },
   {
@@ -65,8 +65,8 @@ export const products: Product[] = [
     condition: 'regular',
     status: 'available',
     images: [
-      'images/5/image1.jpg',
-      'images/5/image2.jpg'
+      'image1.jpg',
+      'image2.jpg'
     ]
   },
   {
@@ -78,8 +78,8 @@ export const products: Product[] = [
     condition: 'like new',
     status: 'available',
     images: [
-      'images/6/image1.jpg',
-      'images/6/image2.jpg'
+      'image1.jpg',
+      'image2.jpg'
     ]
   },
   {
@@ -91,9 +91,9 @@ export const products: Product[] = [
     condition: 'like new',
     status: 'available',
     images: [
-      'images/7/image1.jpg',
-      'images/7/image2.jpg',
-      'images/7/image3.jpg'
+      'image1.jpg',
+      'image2.jpg',
+      'image3.jpg'
     ],
   },
   {
@@ -105,11 +105,11 @@ export const products: Product[] = [
     condition: 'like new',
     status: 'available',
     images: [
-      'images/8/image1.jpg',
-      'images/8/image2.jpg',
-      'images/8/image3.jpg',
-      'images/8/image4.jpg',
-      'images/8/image5.jpg',
+      'image1.jpg',
+      'image2.jpg',
+      'image3.jpg',
+      'image4.jpg',
+      'image5.jpg',
     ],
   },
   {
@@ -121,10 +121,10 @@ export const products: Product[] = [
     condition: 'good',
     status: 'available',
     images: [
-      'images/9/image1.jpg',
-      'images/9/image2.jpg',
-      'images/9/image3.jpg',
-      'images/9/image4.jpg'
+      'image1.jpg',
+      'image2.jpg',
+      'image3.jpg',
+      'image4.jpg'
     ],
   },
   {
@@ -136,7 +136,7 @@ export const products: Product[] = [
     condition: 'like new',
     status: 'available',
     images: [
-      'images/10/image1.jpg'
+      'image1.jpg'
     ],
   },
 ]
