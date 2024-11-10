@@ -92,8 +92,8 @@ export const products: Product[] = [
   {
     id: '8',
     name: 'Samsung Galaxy S22',
-    price: 100000,
-    description: '',
+    price: 650,
+    description: '• Color: Phantom Black<br• 128GB de almacenamiento<br>• 8GB de memoria RAM<br>• MUY cuidado<br>• Se entrega con: caja, cable original sin estrenar, pin para bandeja SIM, funda transparente<br><br>Para más información: <a href="https://www.samsung.com/ar/smartphones/galaxy-s/galaxy-s22-phantom-black-128gb-sm-s901ezklaro/" target="_blank">Samsung Argentina</a>',
     condition: 'like new',
     status: 'available',
     images: [
