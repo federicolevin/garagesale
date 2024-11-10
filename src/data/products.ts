@@ -34,7 +34,7 @@ export const products: Product[] = [
     name: 'Sillas x6',
     price: 420000,
     currency: 'ars',
-    description: '',
+    description: 'Medidas: 92cm alto x 43cm ancho x 63cm profundidad<br><br>• Altura al asiento: 52cm<br>• Material: Soga<br>• Apilable: No<br>',
     condition: 'like new',
     status: 'available',
     images: [
