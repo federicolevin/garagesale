@@ -32,10 +32,12 @@ export function ProductCard({ product, phoneNumber }: ProductCardProps) {
     }
   };
 
-  const formattedPrice = new Intl.NumberFormat('de-DE', {
+  const formattedPrice = new Intl.NumberFormat('es-AR', {
     minimumFractionDigits: 0,
     maximumFractionDigits: 0,
   }).format(product.price);
+
+  const displayPrice = product.currency === 'usd' ? `US$${formattedPrice}` : `$${formattedPrice}`;
 
   return (
     <>
@@ -66,7 +68,7 @@ export function ProductCard({ product, phoneNumber }: ProductCardProps) {
           <p className="text-gray-600 text-sm mt-1 line-clamp-2" dangerouslySetInnerHTML={{ __html: product.description }}></p>
           <Link to={`/${product.id}`} className="text-blue-500 hover:underline text-sm">Ver más</Link>
           <div className="mt-4 flex items-center justify-between">
-            <span className="text-xl font-bold text-gray-900">${formattedPrice}</span>
+            <span className="text-xl font-bold text-gray-900">{displayPrice}</span>
             <button
               onClick={handleWhatsAppClick}
               className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${
