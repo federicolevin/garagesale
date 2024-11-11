@@ -7,7 +7,6 @@ import { products } from './data/products';
 import { Login } from './components/Login';
 import { Backoffice } from './components/Backoffice';
 import { ProductStatus } from './types';
-import ReactGA from 'react-ga'; // Add this line
 
 const WHATSAPP_NUMBER = '+5491162943172';
 
@@ -19,9 +18,6 @@ function App() {
   const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
-    ReactGA.initialize('G-3C4NHGMEXG'); // Replace with your Google Analytics tracking ID
-    ReactGA.pageview(window.location.pathname + window.location.search);
-
     const authData = localStorage.getItem('authData');
     if (authData) {
       const { expiry } = JSON.parse(authData);
@@ -90,10 +86,6 @@ interface AppContentProps {
 
 function AppContent({ isAuthenticated, handleLogin, statusFilter, handleStatusFilterChange, filteredProducts, statusLabels, searchTerm, setSearchTerm }: AppContentProps) {
   const location = useLocation();
-
-  useEffect(() => {
-    ReactGA.pageview(location.pathname + location.search);
-  }, [location]);
 
   return (
     <div className="min-h-screen bg-gray-50">
