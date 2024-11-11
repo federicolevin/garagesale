@@ -15,6 +15,7 @@ const Router = process.env.NODE_ENV === 'production' ? HashRouter : BrowserRoute
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [statusFilter, setStatusFilter] = useState<ProductStatus[]>(['available', 'reserved']);
+  const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
     const authData = localStorage.getItem('authData');
@@ -46,7 +47,9 @@ function App() {
     );
   };
 
-  const filteredProducts = statusFilter.length === 0 ? products : products.filter(product => statusFilter.includes(product.status));
+  const filteredProducts = products
+    .filter(product => statusFilter.includes(product.status))
+    .filter(product => product.name.toLowerCase().includes(searchTerm.toLowerCase()));
 
   const statusLabels: { [key in ProductStatus]: string } = {
     available: 'Disponible',
@@ -63,6 +66,8 @@ function App() {
         handleStatusFilterChange={handleStatusFilterChange}
         filteredProducts={filteredProducts}
         statusLabels={statusLabels}
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
       />
     </Router>
   );
@@ -75,9 +80,11 @@ interface AppContentProps {
   handleStatusFilterChange: (status: ProductStatus) => void;
   filteredProducts: typeof products;
   statusLabels: { [key in ProductStatus]: string };
+  searchTerm: string;
+  setSearchTerm: (term: string) => void;
 }
 
-function AppContent({ isAuthenticated, handleLogin, statusFilter, handleStatusFilterChange, filteredProducts, statusLabels }: AppContentProps) {
+function AppContent({ isAuthenticated, handleLogin, statusFilter, handleStatusFilterChange, filteredProducts, statusLabels, searchTerm, setSearchTerm }: AppContentProps) {
   const location = useLocation();
 
   return (
@@ -93,33 +100,51 @@ function AppContent({ isAuthenticated, handleLogin, statusFilter, handleStatusFi
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {location.pathname !== '/edit' && !/\/\d+$/.test(location.pathname) && (
-          <div className="mb-4 flex gap-2">
-            {(['available', 'reserved', 'sold'] as ProductStatus[]).map((status) => (
-              <button
-                key={status}
-                onClick={() => handleStatusFilterChange(status)}
-                className={`px-4 py-2 rounded-full transition-colors ${
-                  statusFilter.includes(status) ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-700'
-                }`}
-              >
-                {statusLabels[status]}
-              </button>
-            ))}
-          </div>
+          <>
+            <div className="mb-4 flex flex-col sm:flex-row sm:items-center sm:gap-2">
+              <input
+                type="text"
+                placeholder="Buscar por título"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="mb-4 p-2 border border-gray-300 rounded w-full sm:mb-0 sm:w-auto"
+              />
+              <div className="flex gap-2">
+                {(['available', 'reserved', 'sold'] as ProductStatus[]).map((status) => (
+                  <button
+                    key={status}
+                    onClick={() => handleStatusFilterChange(status)}
+                    className={`px-4 py-2 rounded-full transition-colors ${
+                      statusFilter.includes(status) ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-700'
+                    }`}
+                  >
+                    {statusLabels[status]}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </>
         )}
         <Routes>
           <Route
             path="/"
             element={
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {filteredProducts.map((product) => (
-                  <ProductCard
-                    key={product.id}
-                    product={product}
-                    phoneNumber={WHATSAPP_NUMBER}
-                  />
-                ))}
-              </div>
+              filteredProducts.length > 0 ? (
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {filteredProducts.map((product) => (
+                    <ProductCard
+                      key={product.id}
+                      product={product}
+                      phoneNumber={WHATSAPP_NUMBER}
+                    />
+                  ))}
+                </div>
+              ) : (
+                <div className="flex flex-col items-center justify-center h-96">
+                  <p className="text-gray-600 py-4">No se encontraron productos</p>
+                  <img src="/images/empty-state.png" alt="No products found" className="w-64 h-64 mb-4" />
+                </div>
+              )
             }
           />
           <Route
