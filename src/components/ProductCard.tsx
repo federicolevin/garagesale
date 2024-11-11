@@ -87,6 +87,7 @@ export function ProductCard({ product, phoneNumber }: ProductCardProps) {
         <ImageGalleryModal
           images={product.images}
           currentIndex={0} // or any appropriate index
+          productId={product.id} // Pass productId prop
           onClose={() => setShowGallery(false)}
         />
       )}

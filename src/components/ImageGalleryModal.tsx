@@ -4,10 +4,11 @@ import { X } from 'lucide-react';
 interface ImageGalleryModalProps {
   images: string[];
   currentIndex: number;
+  productId: string; // Add productId prop
   onClose: () => void;
 }
 
-export const ImageGalleryModal: React.FC<ImageGalleryModalProps> = ({ images, currentIndex, onClose }) => {
+export const ImageGalleryModal: React.FC<ImageGalleryModalProps> = ({ images, currentIndex, productId, onClose }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(currentIndex);
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
@@ -75,7 +76,7 @@ export const ImageGalleryModal: React.FC<ImageGalleryModalProps> = ({ images, cu
         <button onClick={handlePrev} className="absolute left-0 top-1/2 transform -translate-y-1/2 text-white text-4xl">
           &lt;
         </button>
-        <img src={images[currentImageIndex]} alt={`Image ${currentImageIndex + 1}`} className="max-h-screen" />
+        <img src={`images/${productId}/${images[currentImageIndex]}`} alt={`Image ${currentImageIndex + 1}`} className="max-h-screen" />
         <button onClick={handleNext} className="absolute right-0 top-1/2 transform -translate-y-1/2 text-white text-4xl">
           &gt;
         </button>

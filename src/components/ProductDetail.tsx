@@ -95,6 +95,7 @@ export const ProductDetail: React.FC = () => {
         <ImageGalleryModal
           images={product.images}
           currentIndex={currentImageIndex}
+          productId={product.id} // Pass productId prop
           onClose={() => setShowGallery(false)}
         />
       )}
