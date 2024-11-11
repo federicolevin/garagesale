@@ -84,6 +84,23 @@ export const products: Product[] = [
   },
   {
     id: '7',
+    name: 'Cava de vinos con 2 estantes',
+    price: 130000,
+    currency: 'ars',
+    description: 'Medidas: 110cm alto x 50cm ancho x 35cm profundidad<br><br>• Materiales: hierro y madera<br>• Capacidad para 20 botellas de vino<br>• Cuenta con un estante de chapa negra y otro de madera',
+    condition: 'good',
+    status: 'available',
+    images: [
+      'image1.jpg',
+      'image2.jpg',
+      'image3.jpg',
+      'image4.jpg',
+      'image5.jpg',
+      'image6.jpg'
+    ],
+  },
+  {
+    id: '8',
     name: 'Mesa + sillas Acapulco',
     price: 120000,
     currency: 'ars',
@@ -97,7 +114,7 @@ export const products: Product[] = [
     ],
   },
   {
-    id: '8',
+    id: '9',
     name: 'Samsung Galaxy S22',
     price: 650,
     currency: 'usd',
@@ -113,7 +130,7 @@ export const products: Product[] = [
     ],
   },
   {
-    id: '9',
+    id: '10',
     name: 'Xiaomi Mi Band 6',
     price: 30000,
     currency: 'ars',
@@ -128,7 +145,7 @@ export const products: Product[] = [
     ],
   },
   {
-    id: '10',
+    id: '11',
     name: 'Vodka Absolut Miniatura x 5 Botellitas',
     price: 20000,
     currency: 'ars',
@@ -139,4 +156,18 @@ export const products: Product[] = [
       'image1.jpg'
     ],
   },
+  {
+    id: '12',
+    name: 'Coctelera acero inoxidable',
+    price: 10000,
+    currency: 'ars',
+    description: 'Capacidad 550ml aprox<br>• Accesorios: jigger, filtro y colador',
+    condition: 'good',
+    status: 'available',
+    images: [
+      'image1.jpg',
+      'image2.jpg',
+      'image3.jpg'
+    ],
+  }
 ]
