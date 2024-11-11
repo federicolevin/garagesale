@@ -61,6 +61,11 @@ export const ImageGalleryModal: React.FC<ImageGalleryModalProps> = ({ images, cu
     };
   }, []);
 
+  // Disable modal on desktop
+  if (window.innerWidth >= 1024) {
+    return null;
+  }
+
   return (
     <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-[1000]" onClick={onClose}>
       <button onClick={onClose} className="absolute top-4 right-4 text-white">
