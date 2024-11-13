@@ -169,5 +169,19 @@ export const products: Product[] = [
       'image2.jpg',
       'image3.jpg'
     ],
+  },
+  {
+    id: '13',
+    name: 'Cinta caminadora Ranbak 501',
+    price: 500000,
+    currency: 'ars',
+    description: 'Muy poco uso, en caja original. Incluye manual de instrucciones<br><br>• Peso máximo soportado: 100kg.<br>• Alcanza una velocidad máxima de 6km/h.<br>• Su potencia es de 1.5hp.<br>• Con display. Información en pantalla: Calorías, Distancia, Tiempo, Velocidad.<br>• Cuenta con ruedas que facilitan su traslado.<br>• Accesorios: control remoto y llave de seguridad (apagado automático cuando se desconecta)<br>• Dimensiones: 100cm x 36cm<br>• Voltaje: 220V',
+    condition: 'like new',
+    status: 'available',
+    images: [
+      'image1.jpg',
+      'image2.jpg',
+      'image3.jpg'
+    ],
   }
 ]
