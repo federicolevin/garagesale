@@ -132,7 +132,7 @@ function AppContent({ isAuthenticated, handleLogin, statusFilter, handleStatusFi
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="mb-4 p-2 border border-gray-300 rounded w-full sm:mb-0 sm:w-auto"
               />
-              <select value={orderBy} onChange={handleOrderChange} className="p-2 mb-4 border border-gray-300 rounded">
+              <select value={orderBy} onChange={handleOrderChange} className="p-2 mb-4 border border-gray-300 rounded w-full sm:mb-0 sm:w-auto">
                 <option value="order">Orden por defecto</option>
                 <option value="name">Nombre</option>
                 <option value="price">Precio</option>
