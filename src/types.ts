@@ -1,5 +1,6 @@
 export interface Product {
   id: string;
+  order: number;
   name: string;
   price: number;
   currency: 'ars' | 'usd';

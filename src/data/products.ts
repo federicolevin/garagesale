@@ -3,6 +3,7 @@ import { Product } from '../types';
 export const products: Product[] = [
   {
     id: '1',
+    order: 1,
     name: 'Rack de TV',
     price: 120000,
     currency: 'ars',
@@ -18,6 +19,7 @@ export const products: Product[] = [
   },
   {
     id: '2',
+    order: 2,
     name: 'Mesa de comedor',
     price: 170000,
     currency: 'ars',
@@ -31,6 +33,7 @@ export const products: Product[] = [
   },
   {
     id: '3',
+    order: 3,
     name: 'Sillas x6',
     price: 420000,
     currency: 'ars',
@@ -44,6 +47,7 @@ export const products: Product[] = [
   },
   {
     id: '4',
+    order: 4,
     name: 'Mesa ratona',
     price: 50000,
     currency: 'ars',
@@ -58,6 +62,7 @@ export const products: Product[] = [
   },
   {
     id: '5',
+    order: 5,
     name: 'Alfombra',
     price: 60000,
     currency: 'ars',
@@ -71,6 +76,7 @@ export const products: Product[] = [
   },
   {
     id: '6',
+    order: 6,
     name: 'Recibidor zapatero',
     price: 80000,
     currency: 'ars',
@@ -84,6 +90,7 @@ export const products: Product[] = [
   },
   {
     id: '7',
+    order: 7,
     name: 'Cava de vinos con 2 estantes',
     price: 130000,
     currency: 'ars',
@@ -101,6 +108,7 @@ export const products: Product[] = [
   },
   {
     id: '8',
+    order: 8,
     name: 'Mesa + sillas Acapulco',
     price: 120000,
     currency: 'ars',
@@ -115,6 +123,7 @@ export const products: Product[] = [
   },
   {
     id: '9',
+    order: 9,
     name: 'Samsung Galaxy S22',
     price: 650,
     currency: 'usd',
@@ -131,6 +140,7 @@ export const products: Product[] = [
   },
   {
     id: '10',
+    order: 10,
     name: 'Xiaomi Mi Band 6',
     price: 30000,
     currency: 'ars',
@@ -146,6 +156,7 @@ export const products: Product[] = [
   },
   {
     id: '11',
+    order: 11,
     name: 'Vodka Absolut Miniatura x 5 Botellitas',
     price: 20000,
     currency: 'ars',
@@ -158,6 +169,7 @@ export const products: Product[] = [
   },
   {
     id: '12',
+    order: 12,
     name: 'Coctelera acero inoxidable',
     price: 10000,
     currency: 'ars',
@@ -172,6 +184,7 @@ export const products: Product[] = [
   },
   {
     id: '13',
+    order: 13,
     name: 'Cinta caminadora Ranbak 501',
     price: 500000,
     currency: 'ars',
@@ -186,6 +199,7 @@ export const products: Product[] = [
   },
   {
     id: '14',
+    order: 14,
     name: 'Parrilla eléctrica Tromen Angus E480',
     price: 275000,
     currency: 'ars',
@@ -201,6 +215,7 @@ export const products: Product[] = [
   },
   {
     id: '15',
+    order: 15,
     name: 'Smartwatch Fitbit Versa',
     price: 120000,
     currency: 'ars',

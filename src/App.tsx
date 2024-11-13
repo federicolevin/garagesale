@@ -16,6 +16,7 @@ function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [statusFilter, setStatusFilter] = useState<ProductStatus[]>(['available', 'reserved']);
   const [searchTerm, setSearchTerm] = useState('');
+  const [orderBy, setOrderBy] = useState('order');
 
   useEffect(() => {
     const authData = localStorage.getItem('authData');
@@ -47,9 +48,25 @@ function App() {
     );
   };
 
+  const handleOrderChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setOrderBy(e.target.value);
+  };
+
   const filteredProducts = products
     .filter(product => statusFilter.includes(product.status))
     .filter(product => product.name.toLowerCase().includes(searchTerm.toLowerCase()));
+
+  const sortedProducts = [...filteredProducts].sort((a, b) => {
+    if (orderBy === 'name') {
+      return a.name.localeCompare(b.name);
+    } else if (orderBy === 'price') {
+      return a.price - b.price;
+    } else if (orderBy === 'status') {
+      return a.status.localeCompare(b.status);
+    } else {
+      return a.order - b.order;
+    }
+  });
 
   const statusLabels: { [key in ProductStatus]: string } = {
     available: 'Disponible',
@@ -68,6 +85,9 @@ function App() {
         statusLabels={statusLabels}
         searchTerm={searchTerm}
         setSearchTerm={setSearchTerm}
+        orderBy={orderBy}
+        handleOrderChange={handleOrderChange}
+        sortedProducts={sortedProducts}
       />
     </Router>
   );
@@ -82,9 +102,12 @@ interface AppContentProps {
   statusLabels: { [key in ProductStatus]: string };
   searchTerm: string;
   setSearchTerm: (term: string) => void;
+  orderBy: string;
+  handleOrderChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+  sortedProducts: typeof products;
 }
 
-function AppContent({ isAuthenticated, handleLogin, statusFilter, handleStatusFilterChange, filteredProducts, statusLabels, searchTerm, setSearchTerm }: AppContentProps) {
+function AppContent({ isAuthenticated, handleLogin, statusFilter, handleStatusFilterChange, sortedProducts, statusLabels, searchTerm, setSearchTerm, orderBy, handleOrderChange }: AppContentProps) {
   const location = useLocation();
 
   return (
@@ -109,6 +132,12 @@ function AppContent({ isAuthenticated, handleLogin, statusFilter, handleStatusFi
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="mb-4 p-2 border border-gray-300 rounded w-full sm:mb-0 sm:w-auto"
               />
+              <select value={orderBy} onChange={handleOrderChange} className="p-2 mb-4 border border-gray-300 rounded">
+                <option value="order">Orden por defecto</option>
+                <option value="name">Nombre</option>
+                <option value="price">Precio</option>
+                <option value="status">Estado</option>
+              </select>
               <div className="flex gap-2">
                 {(['available', 'reserved', 'sold'] as ProductStatus[]).map((status) => (
                   <button
@@ -129,9 +158,9 @@ function AppContent({ isAuthenticated, handleLogin, statusFilter, handleStatusFi
           <Route
             path="/"
             element={
-              filteredProducts.length > 0 ? (
+              sortedProducts.length > 0 ? (
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {filteredProducts.map((product) => (
+                  {sortedProducts.map((product) => (
                     <ProductCard
                       key={product.id}
                       product={product}
