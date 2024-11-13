@@ -187,9 +187,9 @@ export const products: Product[] = [
   {
     id: '14',
     name: 'Parrilla eléctrica Tromen Angus E480',
-    price: 0,
+    price: 275000,
     currency: 'ars',
-    description: 'Medidas: 25cm alto x 48cm alto x 50cm profundidad<br><br>• Peso total 15kg<br>• Potencia: 1800W<br>• Consumo: 1,8kw/hora<br>• Accesorios: Módulo de plancha y parrilla enlozado',
+    description: 'Medidas: 25cm alto x 48cm alto x 50cm profundidad<br><br>• Peso total 15kg<br> • Con depósito de grasa desmontable.<br>• Potencia: 1800W<br>• Consumo: 1,8kw/hora<br>• Accesorios: Módulo de plancha y parrilla enlozado',
     condition: 'like new',
     status: 'reserved',
     images: [
@@ -197,6 +197,20 @@ export const products: Product[] = [
       'image2.jpg',
       'image3.jpg',
       'image4.jpg'
+    ],
+  },
+  {
+    id: '15',
+    name: 'Smartwatch Fitbit Versa',
+    price: 120000,
+    currency: 'ars',
+    description: 'Incluye correa small y large<br><br>• Características especiales: Monitor de sueño, Calendario, Mensajería de texto, GPS, Notificaciones, Monitor de frecuencia cardíaca<br>• Tecnologías de comunicación inalámbrica: Bluetooth, NFC<br>• Tecnologías de conectividad: Bluetooth',
+    condition: 'good',
+    status: 'available',
+    images: [
+      'image1.jpg',
+      'image2.jpg',
+      'image3.jpg'
     ],
   }
 ]
