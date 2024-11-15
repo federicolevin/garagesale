@@ -227,5 +227,39 @@ export const products: Product[] = [
       'image2.jpg',
       'image3.jpg'
     ],
+  },
+  {
+    id: '16',
+    order: 16,
+    name: 'iPhone XR 256GB',
+    price: 450000,
+    currency: 'ars',
+    description: 'Capacidad máxima de bateria 80%',
+    condition: 'good',
+    status: 'available',
+    images: [
+      'image1.jpg',
+      'image2.jpg'
+    ],
+  },
+  {
+    id: '17',
+    order: 17,
+    name: 'Teclado Yamaha DGX305',
+    price: 480000,
+    currency: 'ars',
+    description: 'Teclado de 76 teclas (6 octavas)',
+    condition: 'good',
+    status: 'available',
+    images: [
+      'image1.jpg',
+      'image2.jpg',
+      'image3.jpg',
+      'image4.jpg',
+      'image5.jpg',
+      'image6.jpg',
+      'image7.jpg',
+      'image8.jpg'
+    ],
   }
 ]
