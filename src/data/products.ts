@@ -62,7 +62,7 @@ export const products: Product[] = [
   },
   {
     id: '5',
-    order: 5,
+    order: 6,
     name: 'Alfombra',
     price: 60000,
     currency: 'ars',
@@ -76,7 +76,7 @@ export const products: Product[] = [
   },
   {
     id: '6',
-    order: 6,
+    order: 7,
     name: 'Recibidor zapatero',
     price: 80000,
     currency: 'ars',
@@ -90,7 +90,7 @@ export const products: Product[] = [
   },
   {
     id: '7',
-    order: 7,
+    order: 8,
     name: 'Cava de vinos con 2 estantes',
     price: 130000,
     currency: 'ars',
@@ -108,7 +108,7 @@ export const products: Product[] = [
   },
   {
     id: '8',
-    order: 8,
+    order: 9,
     name: 'Mesa + sillas Acapulco',
     price: 120000,
     currency: 'ars',
@@ -123,7 +123,7 @@ export const products: Product[] = [
   },
   {
     id: '9',
-    order: 9,
+    order: 10,
     name: 'Samsung Galaxy S22',
     price: 650,
     currency: 'usd',
@@ -140,7 +140,7 @@ export const products: Product[] = [
   },
   {
     id: '10',
-    order: 10,
+    order: 11,
     name: 'Xiaomi Mi Band 6',
     price: 30000,
     currency: 'ars',
@@ -156,7 +156,7 @@ export const products: Product[] = [
   },
   {
     id: '11',
-    order: 11,
+    order: 12,
     name: 'Vodka Absolut Miniatura x 5 Botellitas',
     price: 20000,
     currency: 'ars',
@@ -169,7 +169,7 @@ export const products: Product[] = [
   },
   {
     id: '12',
-    order: 12,
+    order: 13,
     name: 'Coctelera acero inoxidable',
     price: 10000,
     currency: 'ars',
@@ -184,7 +184,7 @@ export const products: Product[] = [
   },
   {
     id: '13',
-    order: 13,
+    order: 14,
     name: 'Cinta caminadora Ranbak 501',
     price: 500000,
     currency: 'ars',
@@ -199,7 +199,7 @@ export const products: Product[] = [
   },
   {
     id: '14',
-    order: 14,
+    order: 15,
     name: 'Parrilla eléctrica Tromen Angus E480',
     price: 275000,
     currency: 'ars',
@@ -215,7 +215,7 @@ export const products: Product[] = [
   },
   {
     id: '15',
-    order: 15,
+    order: 16,
     name: 'Smartwatch Fitbit Versa',
     price: 120000,
     currency: 'ars',
@@ -230,7 +230,7 @@ export const products: Product[] = [
   },
   {
     id: '16',
-    order: 16,
+    order: 17,
     name: 'iPhone XR 256GB',
     price: 450000,
     currency: 'ars',
@@ -244,7 +244,7 @@ export const products: Product[] = [
   },
   {
     id: '17',
-    order: 17,
+    order: 18,
     name: 'Teclado Yamaha DGX305',
     price: 480000,
     currency: 'ars',
@@ -260,6 +260,21 @@ export const products: Product[] = [
       'image6.jpg',
       'image7.jpg',
       'image8.jpg'
+    ],
+  },
+  {
+    id: '18',
+    order: 5,
+    name: 'Sillón de 2 cuerpos + camastro',
+    price: 600000,
+    currency: 'ars',
+    description: 'Medidas sillón: 190cm ancho x 90cm profundidad.<br>Medidas camastro: 100cm x 50cm.<br><br>• Tapizado en pana antimanchas<br>• Estructura de madera<br>• Almohadones en asiento y en respaldo',
+    condition: 'like new',
+    status: 'available',
+    images: [
+      'image1.jpg',
+      'image2.jpg',
+      'image3.jpg'
     ],
   }
 ]
