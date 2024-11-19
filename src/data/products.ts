@@ -9,7 +9,7 @@ export const products: Product[] = [
     currency: 'ars',
     description: 'Medidas: 147cm ancho x 50cm alto x 40cm profundidad<br><br>• Material: Melamina<br>• Sin tornillos a la vista<br>• Cajón correderas metálicas<br>• Tiene patines plásticos en la base para evitar el contacto directo con el piso<br>• Las puertas abren y cierran con bisagras metálicas',
     condition: 'like new',
-    status: 'available',
+    status: 'reserved',
     images: [
       'image1.jpg',
       'image2.jpg',
