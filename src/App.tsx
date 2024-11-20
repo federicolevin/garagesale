@@ -200,6 +200,9 @@ function AppContent({ isAuthenticated, handleLogin, statusFilter, handleStatusFi
       <footer className="bg-white border-t mt-auto">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <p className="text-center text-gray-600">
+            Se retira por Almagro, CABA
+          </p>
+          <p className="text-center text-gray-600">
             Escribime por cualquier consulta:
             <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank"> WhatsApp</a>
           </p>
