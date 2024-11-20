@@ -82,7 +82,7 @@ export const products: Product[] = [
     currency: 'ars',
     description: 'Medidas: 70cm ancho x 25cm profundidad x 92cm alto<br><br>• Materiales: Hierro y madera<br>• Madera enchapada en paraiso<br>',
     condition: 'like new',
-    status: 'available',
+    status: 'reserved',
     images: [
       'image1.jpg',
       'image2.jpg'
