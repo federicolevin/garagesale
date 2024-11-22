@@ -9,7 +9,7 @@ export const products: Product[] = [
     currency: 'ars',
     description: 'Medidas: 147cm ancho x 50cm alto x 40cm profundidad<br><br>• Material: Melamina<br>• Sin tornillos a la vista<br>• Cajón correderas metálicas<br>• Tiene patines plásticos en la base para evitar el contacto directo con el piso<br>• Las puertas abren y cierran con bisagras metálicas',
     condition: 'like new',
-    status: 'reserved',
+    status: 'sold',
     images: [
       'image1.jpg',
       'image2.jpg',
@@ -82,7 +82,7 @@ export const products: Product[] = [
     currency: 'ars',
     description: 'Medidas: 70cm ancho x 25cm profundidad x 92cm alto<br><br>• Materiales: Hierro y madera<br>• Madera enchapada en paraiso<br>',
     condition: 'like new',
-    status: 'reserved',
+    status: 'sold',
     images: [
       'image1.jpg',
       'image2.jpg'
@@ -205,7 +205,7 @@ export const products: Product[] = [
     currency: 'ars',
     description: 'Medidas: 25cm alto x 48cm alto x 50cm profundidad<br><br>• Peso total 15kg<br> • Con depósito de grasa desmontable.<br>• Potencia: 1800W<br>• Consumo: 1,8kw/hora<br>• Accesorios: Módulo de plancha y parrilla enlozado',
     condition: 'like new',
-    status: 'reserved',
+    status: 'available',
     images: [
       'image1.jpg',
       'image2.jpg',
