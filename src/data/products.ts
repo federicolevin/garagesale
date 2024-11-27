@@ -96,7 +96,7 @@ export const products: Product[] = [
     currency: 'ars',
     description: 'Medidas: 110cm alto x 50cm ancho x 35cm profundidad<br><br>• Materiales: hierro y madera<br>• Capacidad para 20 botellas de vino<br>• Cuenta con un estante de chapa negra y otro de madera',
     condition: 'good',
-    status: 'available',
+    status: 'reserved',
     images: [
       'image1.jpg',
       'image2.jpg',
@@ -114,7 +114,7 @@ export const products: Product[] = [
     currency: 'ars',
     description: 'Juego de exterior compuesto por una mesa y dos sillas Acapulco.<br><br>• Material: Hierro y PVC<br>• Medidas aproximadas mesa: 55cm de altura x 58cm de diametro<br>• Vidrio de 4mm',
     condition: 'like new',
-    status: 'available',
+    status: 'sold',
     images: [
       'image1.jpg',
       'image2.jpg',
