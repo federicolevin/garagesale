@@ -53,7 +53,7 @@ export const products: Product[] = [
     currency: 'ars',
     description: 'Medidas: 90cm ancho x 37cm alto x 45cm profundidad<br><br>• Material: Melamina<br>• Sin tornillos a la vista<br>• Tiene patines plásticos en la base para evitar el contacto directo con el piso',
     condition: 'good',
-    status: 'available',
+    status: 'reserved',
     images: [
       'image1.jpg',
       'image2.jpg',
@@ -68,7 +68,7 @@ export const products: Product[] = [
     currency: 'ars',
     description: 'Medidas: 180cm x 150cm<br><br>• Material: hilo de algodo',
     condition: 'regular',
-    status: 'available',
+    status: 'sold',
     images: [
       'image1.jpg',
       'image2.jpg'
@@ -270,7 +270,7 @@ export const products: Product[] = [
     currency: 'ars',
     description: 'Medidas sillón: 190cm ancho x 90cm profundidad.<br>Medidas camastro: 100cm x 50cm.<br><br>• Tapizado en pana antimanchas<br>• Estructura de madera<br>• Almohadones en asiento y en respaldo',
     condition: 'like new',
-    status: 'available',
+    status: 'reserved',
     images: [
       'image1.jpg',
       'image2.jpg',
