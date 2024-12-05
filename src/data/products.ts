@@ -25,7 +25,7 @@ export const products: Product[] = [
     currency: 'ars',
     description: 'Medidas: 135cm x 80cm x 75cm<br><br>• Mesa en hierro y madera<br>• Madera: enchapado en paraiso<br>• Estructura de caño 30cm x 30cm<br>• No incluye sillas',
     condition: 'like new',
-    status: 'available',
+    status: 'sold',
     images: [
       'image1.jpg',
       'image2.jpg'
@@ -39,7 +39,7 @@ export const products: Product[] = [
     currency: 'ars',
     description: 'Medidas: 92cm alto x 43cm ancho x 63cm profundidad<br><br>• Altura al asiento: 52cm<br>• Material: Soga<br>• Apilable: No<br>',
     condition: 'like new',
-    status: 'available',
+    status: 'sold',
     images: [
       'image1.jpg',
       'image2.jpg'
