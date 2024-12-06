@@ -162,7 +162,7 @@ export const products: Product[] = [
     currency: 'ars',
     description: '5 botellitas de 50cl cada una con su caja de exhibición.<br>Los gustos son: Vanilia, Ruby Red, Pear, Raspberry y Citron.',
     condition: 'like new',
-    status: 'available',
+    status: 'sold',
     images: [
       'image1.jpg'
     ],
@@ -175,7 +175,7 @@ export const products: Product[] = [
     currency: 'ars',
     description: 'Capacidad 550ml aprox<br>• Accesorios: jigger, filtro y colador',
     condition: 'good',
-    status: 'available',
+    status: 'sold',
     images: [
       'image1.jpg',
       'image2.jpg',
